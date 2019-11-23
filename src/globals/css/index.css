@@ -1,8 +1,20 @@
 @import "./fonts.css";
 @import "./media-queries.css";
+@import "./variables.colors.css";
 @import "./variables.typography.css";
 
 html,
 body {
+    color: var(--color-black);
     font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-headline);
+    margin: 0;
 }

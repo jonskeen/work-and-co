@@ -1,0 +1,7 @@
+:root {
+	--color-white: #FFF;
+	--color-black: #292929;
+	--color-light-grey: #9B9B9B;
+
+	--color-disabled: rgba(41, 41, 41, .3);
+}
