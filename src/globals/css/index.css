@@ -1,1 +1,8 @@
+@import "./fonts.css";
 @import "./media-queries.css";
+@import "./variables.typography.css";
+
+html,
+body {
+    font-family: var(--font-body);
+}
