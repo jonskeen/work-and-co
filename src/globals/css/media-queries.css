@@ -1,5 +1,5 @@
-@custom-media --large (width > 1024px);
+@custom-media --large (width > 768px);
 
-@custom-media --medium (width > 768px);
+@custom-media --medium (width > 415px); /* wider than spec to keep mobile view on iPhone 6/7/8 Plus */
 
-@custom-media --small (width <= 768px);
+@custom-media --small (width <= 415px);
