@@ -1,3 +1,8 @@
 .productList li {
     background-color: var(--color-white);
+    border-radius: 10px;
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
 }

@@ -8,9 +8,9 @@ import styles from "./styles.module.css"
 
 
 const Products = ({ products }) => (
-  <ul className={styles.productList}>
+  <ul className={styles.productList} aria-label="Acme Watches" tabIndex={0}>
     {products.map(product => (
-        <li key={product.id}>
+        <li key={product.id} aria-label={product.title} tabIndex={0}>
           <ProductItem product={product} />
         </li>
       ))}

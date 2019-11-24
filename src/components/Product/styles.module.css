@@ -1,6 +1,8 @@
 .product {
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     @media (--medium) {
         flex-direction: row;

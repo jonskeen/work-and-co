@@ -27,7 +27,7 @@ const Product = ({ id, price, inventory, title, addToCart }) => {
 
         <div className={styles.body}>
           <div className={styles.titlePriceWrapper}>
-            <h2 className={styles.title} >{title}</h2>
+            <h2 className={styles.title}>{title}</h2>
             <div className={styles.price} tabIndex={0}>${price}</div>
           </div>
 
