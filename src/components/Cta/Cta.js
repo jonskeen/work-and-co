@@ -5,13 +5,14 @@ import { isFunction } from "helpers";
 import styles from "./styles.module.css";
 
 
-const Cta = ({ label, ariaLabel, variant, disabled, onClick }) => {
+const Cta = ({ label, ariaLabel, variant, disabled, fullWidth, onClick }) => {
 
   const combineClasses = () => {
     const variantClass = variant in styles ? styles[variant] : "";
     const disabledClass = disabled ? styles.disabled : "";
+    const fullWidthClass = fullWidth ? styles.fullWidth : "";
 
-    return `${styles.cta} ${variantClass} ${disabledClass}`;
+    return `${styles.cta} ${variantClass} ${disabledClass} ${fullWidthClass}`;
   };
 
   const ctaClassNames = combineClasses();
@@ -36,9 +37,14 @@ const Cta = ({ label, ariaLabel, variant, disabled, onClick }) => {
 
 Cta.propTypes = {
   label: PropTypes.string,
-  variant: PropTypes.oneOf([ "full", "halfLeft", "halfRight"]),
+  variant: PropTypes.oneOf([ "oval", "rectangle" ]),
   disabled: PropTypes.bool,
+  fullWidth: PropTypes.bool,
   onClick: PropTypes.func
+};
+
+Cta.defaultProps = {
+  variant: "oval"
 };
 
 export default Cta;

@@ -1,6 +1,5 @@
 .cta {
     background-color: var(--color-primary);
-    border-radius: 100px;
     color: var(--color-white);
     padding: 8px 17px;
     text-transform: uppercase;
@@ -10,10 +9,18 @@
     }
 }
 
+.cta.oval {
+    border-radius: var(--border-radius-2x);
+}
+
 .cta:not(.disabled):hover {
     background-color: var(--color-primary-hover);
 }
 
 .cta.disabled {
     opacity: var(--disabled-opacity);
+}
+
+.cta.fullWidth {
+    width: 100%;
 }

@@ -79,3 +79,31 @@
     justify-content: center;
     text-align: center;
 }
+
+.pricingRow {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.pricingRow .amount {
+    font-weight: lighter;
+}
+
+.pricingRow.total {
+    margin-top: 20px;
+}
+
+.checkout {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.checkout button {
+    padding: 14px 0;
+}
