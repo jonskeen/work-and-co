@@ -10,6 +10,7 @@ import styles from "./styles.module.css";
 
 const Product = ({ id, price, inventory, title, addToCart }) => {
   const imageSrc = require(`globals/assets/product-images/${title.toLowerCase()}.png`);
+  const altText = `View of the ${title} watch face`; // ideally this would be more descriptive and come along with the API
   const hasInventory = inventory > 0;
 
   const handleAddToCartClicked = () => {
@@ -21,16 +22,16 @@ const Product = ({ id, price, inventory, title, addToCart }) => {
   return (
       <div className={styles.product}>
         <div className={styles.image} >
-          <img src={imageSrc} alt="" style={{ width: "100%" }} />
+          <img src={imageSrc} alt={altText} tabIndex={0} />
         </div>
 
         <div className={styles.body}>
           <div className={styles.titlePriceWrapper}>
-            <h2 className={styles.title}>{title}</h2>
-            <div className={styles.price}>${price}</div>
+            <h2 className={styles.title} >{title}</h2>
+            <div className={styles.price} tabIndex={0}>${price}</div>
           </div>
 
-          <div className={`${styles.inventory} ${!hasInventory ? styles.disabled : ""}`}>
+          <div className={`${styles.inventory} ${!hasInventory ? styles.disabled : ""}`} tabIndex={0}>
             {hasInventory
                 ? `${inventory} Remaining`
                 : "Out of Stock"
@@ -42,6 +43,7 @@ const Product = ({ id, price, inventory, title, addToCart }) => {
                 onClick={handleAddToCartClicked}
                 disabled={!hasInventory}
                 label="Add to cart"
+                ariaLabel={`Add ${title} to cart`}
             />
           </div>
         </div>

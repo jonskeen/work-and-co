@@ -5,7 +5,7 @@ import { isFunction } from "helpers";
 import styles from "./styles.module.css";
 
 
-const Cta = ({ label, variant, disabled, onClick }) => {
+const Cta = ({ label, ariaLabel, variant, disabled, onClick }) => {
 
   const combineClasses = () => {
     const variantClass = variant in styles ? styles[variant] : "";
@@ -23,7 +23,12 @@ const Cta = ({ label, variant, disabled, onClick }) => {
   };
 
   return (
-      <button className={ctaClassNames} onClick={handleClick} disabled={disabled}>
+      <button
+          className={ctaClassNames}
+          onClick={handleClick}
+          disabled={disabled}
+          aria-label={ariaLabel}
+      >
         {label}
       </button>
   );
