@@ -27,7 +27,7 @@ const Product = ({ id, price, inventory, title, addToCart }) => {
         <div className={styles.description}>
           <div className={styles.titlePriceWrapper}>
             <h2 className={styles.title}>{title}</h2>
-            <div className={styles.price}>{price}</div>
+            <div className={styles.price}>${price}</div>
           </div>
 
           <div className={`${styles.inventory} ${!hasInventory ? styles.disabled : ""}`}>
