@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import ProductsContainer from 'containers/Products/Products';
 import CartContainer from 'containers/Cart/Cart';
 import CartIcon from 'globals/assets/icons/cart.svg'
@@ -33,6 +34,10 @@ class App extends Component {
 
   render() {
     const { isCartOpen } = this.state;
+    const { itemQuantities } = this.props;
+    const totalItems = Object.values(itemQuantities).reduce((total, num) => {
+      return total + num;
+    }, 0);
 
     return (
         <div className={styles.app}>
@@ -43,7 +48,12 @@ class App extends Component {
                 onClick={() => this.setIsCartOpen(!isCartOpen)}
             >
               <CartIcon/>
-              Your cart is empty
+              <span>
+                {totalItems > 0
+                    ? `${totalItems} item${totalItems > 1 ? "s" : ""} in cart`
+                    : "Your cart is empty"
+                }
+              </span>
             </button>
           </div>
           <hr className={styles.hRule}/>
@@ -55,4 +65,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  itemQuantities: state.cart.quantityById
+});
+
+export default connect(mapStateToProps)(App);
