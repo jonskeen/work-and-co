@@ -1,5 +1,5 @@
 .heading {
-    font-size: 38px;
+    font-size: 28px;
     font-weight: bold;
 
     @media (--medium) {
@@ -23,4 +23,51 @@
     @media (--medium) {
         margin-top: 25px;
     }
+}
+
+.productList {
+    margin-top: 20px;
+}
+
+.productWrapper {
+    margin-bottom: 20px;
+}
+
+.buttonBar {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    margin: 20px 0;
+
+    & > * {
+        width: 33.33%;
+    }
+}
+
+.halfLeft,
+.halfRight {
+    background-color: var(--color-light-grey);
+    border: solid 1px var(--color-light-grey);
+
+    & > svg {
+        vertical-align: middle;
+    }
+}
+
+.halfLeft {
+    border-radius: var(--border-radius-2x) 0 0 var(--border-radius-2x);
+}
+
+.halfRight {
+    border-radius: 0 var(--border-radius-2x) var(--border-radius-2x) 0;
+}
+
+.quantity {
+    align-items: center;
+    border: solid 1px var(--color-light-grey);
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    justify-content: center;
+    text-align: center;
 }

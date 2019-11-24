@@ -62,3 +62,13 @@
         right: 30px;
     }
 }
+
+.closeButton > svg {
+    height: 20px;
+    width: 20px;
+
+    @media (--medium) {
+        height: 30px;
+        width: 30px;
+    }
+}
