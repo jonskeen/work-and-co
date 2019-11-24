@@ -2,8 +2,6 @@ import React from 'react'
 import { connect } from "react-redux"
 import PropTypes from 'prop-types'
 import {addToCart} from 'actions';
-import {isFunction} from 'helpers';
-import Cta from 'components/Cta/Cta';
 
 import styles from "./styles.module.css";
 

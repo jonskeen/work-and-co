@@ -16,9 +16,9 @@ const Cart  = ({ products, total: subtotal, onCheckoutClicked }) => {
   const taxAmount = parseFloat(subtotal) * TAX_RATE;
   const total = parseFloat(subtotal) + taxAmount;
 
-  const renderProduct = product => {
+  const renderProduct = (product, i) => {
     return (
-        <div className={styles.productWrapper}>
+        <div className={styles.productWrapper} key={i}>
           <CartProduct
               title={product.title}
               price={product.price}
@@ -40,11 +40,11 @@ const Cart  = ({ products, total: subtotal, onCheckoutClicked }) => {
   const nodes = hasProducts
       ? products.map(renderProduct)
       : (
-    <div className={styles.emptyCart}>
-      <CartIcon />
-      <span className={styles.copy}>Please add some products<br /> to your cart.</span>
-    </div>
-  );
+          <div className={styles.emptyCart}>
+            <CartIcon />
+            <span className={styles.copy}>Please add some products<br /> to your cart.</span>
+          </div>
+      );
 
   return (
     <div>
@@ -75,9 +75,9 @@ const Cart  = ({ products, total: subtotal, onCheckoutClicked }) => {
 
           <div className={styles.checkout}>
             <Cta
-                variant="full"
+                variant="rectangle"
                 onClick={onCheckoutClicked}
-                disabled={hasProducts ? '' : 'disabled'}
+                disabled={hasProducts}
                 label="Checkout"
                 fullWidth
             />
