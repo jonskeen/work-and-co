@@ -9,13 +9,10 @@ import ProductsList from '../components/ProductList/ProductsList'
 const ProductsContainer = ({ products, addToCart }) => (
   <ProductsList title="Products">
     {products.map(product =>
-      <ProductItem
-        key={product.id}
-        product={product}
-        onAddToCartClicked={() => addToCart(product.id)} />
+      <ProductItem key={product.id} product={product} />
     )}
   </ProductsList>
-)
+);
 
 ProductsContainer.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({
@@ -25,13 +22,10 @@ ProductsContainer.propTypes = {
     inventory: PropTypes.number.isRequired
   })).isRequired,
   addToCart: PropTypes.func.isRequired
-}
+};
 
 const mapStateToProps = state => ({
   products: getVisibleProducts(state.products)
-})
+});
 
-export default connect(
-  mapStateToProps,
-  { addToCart }
-)(ProductsContainer)
+export default connect(mapStateToProps)(ProductsContainer)

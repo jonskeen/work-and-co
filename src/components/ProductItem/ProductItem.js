@@ -1,28 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Product from '../Product/Product'
+import Product from 'components/Product/Product'
 
-const ProductItem = ({ product, onAddToCartClicked }) => (
+
+const ProductItem = ({ product }) => (
   <div style={{ marginBottom: 20 }}>
     <Product
+      id={product.id}
       title={product.title}
       price={product.price}
-      inventory={product.inventory} />
-    <button
-      onClick={onAddToCartClicked}
-      disabled={product.inventory > 0 ? '' : 'disabled'}>
-      {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
-    </button>
+      inventory={product.inventory}
+    />
   </div>
-)
+);
 
 ProductItem.propTypes = {
   product: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     inventory: PropTypes.number.isRequired
-  }).isRequired,
-  onAddToCartClicked: PropTypes.func.isRequired
-}
+  }).isRequired
+};
 
 export default ProductItem

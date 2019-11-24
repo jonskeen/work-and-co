@@ -49,6 +49,7 @@
 }
 
 .description {
+    position: relative;
 
     @media (--medium) {
         flex-grow: 1;
@@ -93,4 +94,13 @@
 
 .inventory.disabled {
     color: var(--color-disabled);
+}
+
+.ctaWrapper {
+    bottom: 30px;
+    position: absolute;
+
+    @media (--large) {
+        bottom: 40px
+    }
 }
