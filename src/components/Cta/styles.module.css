@@ -5,3 +5,11 @@
     padding: 12px 26px;
     text-transform: uppercase;
 }
+
+.cta:not(.disabled):hover {
+    background-color: var(--color-primary-hover);
+}
+
+.cta.disabled {
+    opacity: var(--disabled-opacity);
+}

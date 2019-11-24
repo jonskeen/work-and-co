@@ -2,7 +2,9 @@
 	--color-white: #FFF;
 	--color-black: #292929;
 	--color-light-grey: #9B9B9B;
-	--color-primary: #407FC0;
+	--color-primary: #5E97D1;
+	--color-primary-hover: #407FC0;
+	--disabled-opacity: .3;
 
-	--color-disabled: rgba(41, 41, 41, .3);
+	--color-disabled: rgba(41, 41, 41, var(--disabled-opacity));
 }
