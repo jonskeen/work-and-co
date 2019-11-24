@@ -1,0 +1,7 @@
+.cta {
+    background-color: var(--color-primary);
+    border-radius: 100px;
+    color: var(--color-white);
+    padding: 12px 26px;
+    text-transform: uppercase;
+}
