@@ -10,7 +10,6 @@ import styles from "./styles.module.css";
 
 const CartProduct = ({ id, price, title, quantity }) => {
   const imageSrc = require(`globals/assets/product-images/${title.toLowerCase()}.png`);
-  const altText = `View of the ${title} watch face`; // ideally this would be more descriptive and come along with the API
 
   return (
       <div className={styles.product}>

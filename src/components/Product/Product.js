@@ -21,9 +21,11 @@ const Product = ({ id, price, inventory, title, addToCart }) => {
 
   return (
       <div className={styles.product}>
-        <div className={styles.image} >
-          <img src={imageSrc} alt={altText} tabIndex={0} />
-        </div>
+        <div
+            className={styles.image}
+            style={{ backgroundImage: `url(${imageSrc})`}}
+            aria-label={altText}
+        />
 
         <div className={styles.body}>
           <div className={styles.titlePriceWrapper}>
