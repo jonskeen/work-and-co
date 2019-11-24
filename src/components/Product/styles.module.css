@@ -10,57 +10,55 @@
 .titlePriceWrapper {
     align-items: flex-start;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    padding-bottom: 12px;
 
     @media (--medium) {
-        flex-direction: row;
+        padding-bottom: 9px;
     }
 }
 
 .image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
     width: 100%;
 
     @media (--medium) {
-        flex-shrink: 1;
-        width: 40.625%;
-    }
-}
-
-.aspectWrapper {
-    @media (--medium) {
-        padding-bottom: 73.13%; /* aspect ratio per spec */
-    }
-
-    @media (--large) {
-        padding-bottom: 61.98%; /* aspect ratio per spec */
+        flex-shrink: 0;
+        width: 40%;
     }
 }
 
 .image > img {
     object-fit: cover;
     object-position: center;
-    position: absolute;
+    width: 100%;
+
+    @media (--medium) {
+        height: 100%;
+        width: initial;
+    }
 }
 
-.description {
-    padding: 25px;
-    position: relative;
+.body {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 25px 25px 30px 25px;
 
     @media (--medium) {
         flex-grow: 1;
         flex-shrink: 0;
-        padding: 35px 45px 0 40px;
+        max-width: 60%;
+        padding: 35px 45px 30px 40px;
     }
 
     @media (--large) {
-        padding: 45px 75px 0 53px;
+        padding: 45px 75px 40px 53px;
     }
+
 }
 
 .title {
@@ -69,6 +67,7 @@
 
     @media (--medium) {
         font-size: 28px;
+        margin-right: 20px;
     }
 
     @media (--large) {
@@ -90,7 +89,12 @@
     color: var(--color-dark-grey);
     font-family: var(--font-subheading);
     font-size: 12px;
+    padding-bottom: 20px;
     text-transform: uppercase;
+
+    @media (--medium) {
+        padding-bottom: 44px;
+    }
 
     @media (--large) {
         font-size: 13px;
@@ -102,10 +106,5 @@
 }
 
 .ctaWrapper {
-    bottom: 30px;
-    position: absolute;
-
-    @media (--large) {
-        bottom: 40px
-    }
+    margin-top: auto;
 }

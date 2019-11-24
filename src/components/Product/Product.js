@@ -12,7 +12,7 @@ const Product = ({ id, price, inventory, title, addToCart }) => {
   const imageSrc = require(`globals/assets/product-images/${title.toLowerCase()}.png`);
   const hasInventory = inventory > 0;
 
-  const handleAddToCartClicked = event => {
+  const handleAddToCartClicked = () => {
     if (isFunction(addToCart)) {
       addToCart(id);
     }
@@ -20,11 +20,11 @@ const Product = ({ id, price, inventory, title, addToCart }) => {
 
   return (
       <div className={styles.product}>
-        <div className={styles.image} style={{ backgroundImage: `url(${imageSrc})` }}>
-          <div className={styles.aspectWrapper} />
+        <div className={styles.image} >
+          <img src={imageSrc} alt="" style={{ width: "100%" }} />
         </div>
 
-        <div className={styles.description}>
+        <div className={styles.body}>
           <div className={styles.titlePriceWrapper}>
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.price}>${price}</div>
@@ -45,7 +45,6 @@ const Product = ({ id, price, inventory, title, addToCart }) => {
             />
           </div>
         </div>
-
       </div>
   );
 };
