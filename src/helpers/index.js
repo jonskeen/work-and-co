@@ -6,6 +6,8 @@
 
 export const isFunction = func => typeof func === "function";
 
+export const isNonEmptyArray = array => Array.isArray(array) && array.length > 0;
+
 export const formatCurrency = amount => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency', currency: 'USD'
