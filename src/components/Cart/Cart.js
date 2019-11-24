@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Product from 'components/Product/Product'
+import React from 'react';
+import PropTypes from 'prop-types';
+import CartProduct from 'components/CartProduct/CartProduct';
 
 import CartIcon from "globals/assets/icons/cart.svg";
 import styles from "./styles.module.css";
@@ -11,7 +11,7 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
 
   const nodes = hasProducts ? (
     products.map(product =>
-      <Product
+      <CartProduct
         title={product.title}
         price={product.price}
         quantity={product.quantity}

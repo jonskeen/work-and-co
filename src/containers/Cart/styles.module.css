@@ -34,7 +34,8 @@
     bottom: 0;
     box-sizing: border-box;
     left: 0;
-    padding: 68px 80px;
+    overflow: auto;
+    padding: 48px 17px 0 17px;
     position: absolute;
     right: 0;
     top: 0;
@@ -42,6 +43,7 @@
     @media (--medium) {
         border-radius: var(--border-radius);
         height: 80vh;
+        padding: 68px 80px;
         position: relative;
         width: 60%;
     }
