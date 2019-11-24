@@ -19,6 +19,19 @@ module.exports = function override(config, env) {
   // set up relative paths for easier importing and refactoring
   config.resolve.modules.push(path.resolve('./src'));
 
+  /**
+   * Make SVGs available as components. This is a hacky insertion method, I would
+   * normally rebuild the full rules array with my exact preferences instead of
+   * just poking a new loader into the top
+   **/
+  config.module.rules[2].oneOf.unshift({
+    test: /\.svg$/,
+    use: [
+      require.resolve("desvg-loader/react"),
+      require.resolve("svg-loader"),
+    ]
+  });
+
   // re-configure postcss with some convenient helpers
   require('react-app-rewire-postcss')(config, {
     plugins: [
