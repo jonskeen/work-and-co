@@ -40,7 +40,7 @@ const Product = ({ id, price, inventory, title, addToCart }) => {
           <div className={styles.ctaWrapper}>
             <Cta
                 onClick={handleAddToCartClicked}
-                disabled={hasInventory ? '' : 'disabled'}
+                disabled={!hasInventory}
                 label="Add to cart"
             />
           </div>

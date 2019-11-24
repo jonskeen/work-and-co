@@ -1,7 +1,8 @@
 :root {
 	--color-white: #FFF;
 	--color-black: #292929;
-	--color-light-grey: #9B9B9B;
+	--color-dark-grey: #9B9B9B;
+	--color-light-grey: #F5F5F5;
 	--color-primary: #5E97D1;
 	--color-primary-hover: #407FC0;
 	--disabled-opacity: .3;

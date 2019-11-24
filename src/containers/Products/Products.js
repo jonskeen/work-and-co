@@ -3,14 +3,18 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getVisibleProducts } from 'reducers/products'
 import ProductItem from 'components/ProductItem/ProductItem'
-import ProductsList from 'components/ProductList/ProductsList'
+
+import styles from "./styles.module.css"
+
 
 const Products = ({ products }) => (
-  <ProductsList title="Products">
-    {products.map(product =>
-      <ProductItem key={product.id} product={product} />
-    )}
-  </ProductsList>
+  <ul className={styles.productList}>
+    {products.map(product => (
+        <li key={product.id}>
+          <ProductItem product={product} />
+        </li>
+      ))}
+  </ul>
 );
 
 Products.propTypes = {

@@ -49,12 +49,17 @@
 }
 
 .description {
+    padding: 25px;
     position: relative;
 
     @media (--medium) {
         flex-grow: 1;
         flex-shrink: 0;
-        padding-left: 53px; /* todo: decide whether to make this proportional or keep it static */
+        padding: 35px 45px 0 40px;
+    }
+
+    @media (--large) {
+        padding: 45px 75px 0 53px;
     }
 }
 
@@ -82,7 +87,7 @@
 }
 
 .inventory {
-    color: var(--color-light-grey);
+    color: var(--color-dark-grey);
     font-family: var(--font-subheading);
     font-size: 12px;
     text-transform: uppercase;
