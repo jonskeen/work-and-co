@@ -16,3 +16,67 @@
         margin: 0 auto;
     }
 }
+
+.headline {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 21px;
+
+    @media (--medium) {
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 25px;
+    }
+
+    @media (--large) {
+        margin-bottom: 34px;
+    }
+}
+
+.hRule {
+    margin-bottom: 21px;
+
+    @media (--medium) {
+        margin-bottom: 25px;
+    }
+
+    @media (--large) {
+        margin-bottom: 30px;
+    }
+}
+
+.cartWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cartWrapper > svg {
+    height: 17px;
+    margin-right: 8px;
+    width: auto;
+}
+
+.cartWrapper {
+    font-size: 14px;
+}
+
+.cartWrapper > svg g {
+    stroke: var(--color-black);
+}
+
+.cartWrapper:hover {
+    color: var(--color-primary-hover);
+    cursor: pointer;
+
+    & > svg g {
+        stroke: var(--color-primary-hover);
+    }
+}
+
+.unbutton {
+    border: none;
+    background: transparent;
+}
