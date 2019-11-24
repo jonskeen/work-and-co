@@ -1,5 +1,5 @@
 .product {
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
     overflow: hidden;

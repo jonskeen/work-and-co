@@ -2,10 +2,12 @@
 	--color-white: #FFF;
 	--color-black: #292929;
 	--color-dark-grey: #9B9B9B;
+	--color-grey: #D8D8D8;
 	--color-light-grey: #F5F5F5;
 	--color-primary: #5E97D1;
 	--color-primary-hover: #407FC0;
-	--disabled-opacity: .3;
 
+	--disabled-opacity: .3;
 	--color-disabled: rgba(41, 41, 41, var(--disabled-opacity));
+	--color-modal-overlay: rgba(9, 9, 9, .6);
 }

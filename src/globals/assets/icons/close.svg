@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>Close btn</title>
+    <desc>Created with Sketch.</desc>
+    <g id="v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Desktop-Copy-2" transform="translate(-971.000000, -205.000000)" stroke="#9B9B9B" stroke-width="2">
+            <g id="Close-btn" transform="translate(972.000000, 206.000000)">
+                <line x1="0.714285714" y1="0.714285714" x2="29.6582851" y2="29.6582851" id="Line-3"></line>
+                <line x1="28" y1="1" x2="0" y2="30" id="Line-3"></line>
+            </g>
+        </g>
+    </g>
+</svg>

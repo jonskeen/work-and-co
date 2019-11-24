@@ -1,0 +1,26 @@
+.heading {
+    font-size: 38px;
+    font-weight: bold;
+
+    @media (--medium) {
+        font-size: 38px;
+    }
+}
+
+.emptyCart {
+    align-items: center;
+    color: var(--color-dark-grey);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-subheading);
+    padding: 150px 0;
+    text-align: center;
+}
+
+.emptyCart .copy {
+    margin-top: 20px;
+
+    @media (--medium) {
+        margin-top: 25px;
+    }
+}

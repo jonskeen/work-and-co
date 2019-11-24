@@ -32,3 +32,9 @@ button {
     color: var(--color-black);
     font-family: var(--font-body);
 }
+
+hr {
+    background-color: var(--color-grey);
+    border: none;
+    height: 1px;
+}

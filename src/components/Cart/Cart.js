@@ -1,9 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Product from '../Product/Product'
+import Product from 'components/Product/Product'
+
+import CartIcon from "globals/assets/icons/cart.svg";
+import styles from "./styles.module.css";
+
 
 const Cart  = ({ products, total, onCheckoutClicked }) => {
-  const hasProducts = products.length > 0
+  const hasProducts = products.length > 0;
+
   const nodes = hasProducts ? (
     products.map(product =>
       <Product
@@ -14,12 +19,16 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
       />
     )
   ) : (
-    <em>Please add some products to cart.</em>
-  )
+    <div className={styles.emptyCart}>
+      <CartIcon />
+      <span className={styles.copy}>Please add some products<br /> to your cart.</span>
+    </div>
+  );
 
   return (
     <div>
-      <h3>Your Cart</h3>
+      <h3 className={styles.heading}>Your Cart</h3>
+      <hr />
       <div>{nodes}</div>
       <p>Total: &#36;{total}</p>
       <button onClick={onCheckoutClicked}
@@ -28,12 +37,12 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
       </button>
     </div>
   )
-}
+};
 
 Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
   onCheckoutClicked: PropTypes.func
-}
+};
 
-export default Cart
+export default Cart;
