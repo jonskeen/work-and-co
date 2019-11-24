@@ -52,6 +52,14 @@
     & > svg {
         vertical-align: middle;
     }
+
+    &:hover {
+        background-color: var(--color-primary-hover);
+    }
+
+    &:hover > svg g {
+        stroke: var(--color-white);
+    }
 }
 
 .halfLeft {
