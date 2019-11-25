@@ -80,6 +80,17 @@
     text-align: center;
 }
 
+.pricingWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 90px;
+}
+
+.pricingWrapper hr {
+    width: 100%;
+}
+
 .pricingRow {
     display: flex;
     flex-direction: row;
@@ -95,19 +106,4 @@
 
 .pricingRow.total {
     margin-top: 20px;
-}
-
-.checkout {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-}
-
-.checkout button {
-    padding: 14px 0;
-}
-
-button.disabled {
-    opacity: var(--disabled-opacity);
 }

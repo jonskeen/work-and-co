@@ -77,40 +77,28 @@ const Cart  = ({ products, total: subtotal, onCheckoutClicked, addToCart, subtra
       );
 
   return (
-    <div>
+    <div className={styles.cart}>
       <h3 className={styles.heading}>Your Cart</h3>
       <hr />
       <div className={styles.productList}>{nodes}</div>
 
       {hasProducts &&
-        <div>
-          <div className={styles.pricing}>
-            <div className={styles.pricingRow}>
-              <label>Subtotal</label>
-              <div className={styles.amount}>{formatCurrency(subtotal)}</div>
-            </div>
-
-            <div className={styles.pricingRow}>
-              <label>Taxes</label>
-              <div className={styles.amount}>{formatCurrency(taxAmount)}</div>
-            </div>
-
-            <hr />
-
-            <div className={`${styles.pricingRow} ${styles.total}`}>
-              <label>Total</label>
-              <div className={styles.amount}>{formatCurrency(total)}</div>
-            </div>
+        <div className={styles.pricingWrapper}>
+          <div className={styles.pricingRow}>
+            <label>Subtotal</label>
+            <div className={styles.amount}>{formatCurrency(subtotal)}</div>
           </div>
 
-          <div className={styles.checkout}>
-            <Cta
-                variant="rectangle"
-                onClick={onCheckoutClicked}
-                disabled={hasProducts}
-                label="Checkout"
-                fullWidth
-            />
+          <div className={styles.pricingRow}>
+            <label>Taxes</label>
+            <div className={styles.amount}>{formatCurrency(taxAmount)}</div>
+          </div>
+
+          <hr />
+
+          <div className={`${styles.pricingRow} ${styles.total}`}>
+            <label>Total</label>
+            <div className={styles.amount}>{formatCurrency(total)}</div>
           </div>
         </div>
       }

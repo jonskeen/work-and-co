@@ -43,9 +43,24 @@
     @media (--medium) {
         border-radius: var(--border-radius);
         height: 80vh;
-        padding: 68px 80px;
+        padding: 68px 80px 0 80px;
         position: relative;
         width: 80%;
+    }
+}
+
+.closeButtonWrapper {
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+
+    @media (--medium) {
+        height: 30px;
+        right: 30px;
+        top: 30px;
+        width: 30px;
     }
 }
 
@@ -53,22 +68,35 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    padding: 0;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    width: inherit;
 
     @media (--medium) {
-        top: 30px;
-        right: 30px;
+        position: fixed;
     }
 }
 
 .closeButton > svg {
-    height: 20px;
-    width: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.checkout {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
 
     @media (--medium) {
-        height: 30px;
-        width: 30px;
+        bottom: unset;
     }
+}
+
+.checkout button {
+    padding: 14px 0;
+}
+
+button.disabled {
+    opacity: var(--disabled-opacity);
 }
