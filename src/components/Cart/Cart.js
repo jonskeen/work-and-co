@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
-import {addToCart} from 'actions';
+import {addToCart, subtractOneFromCart} from 'actions';
 import {formatCurrency, isFunction} from 'helpers';
 import CartProduct from 'components/CartProduct/CartProduct';
 import Cta from "components/Cta/Cta"
@@ -13,7 +13,7 @@ import styles from "./styles.module.css";
 
 const TAX_RATE = 0.08;
 
-const Cart  = ({ products, total: subtotal, onCheckoutClicked, addToCart }) => {
+const Cart  = ({ products, total: subtotal, onCheckoutClicked, addToCart, subtractOneFromCart }) => {
   const hasProducts = products.length > 0;
   const taxAmount = parseFloat(subtotal) * TAX_RATE;
   const total = parseFloat(subtotal) + taxAmount;
@@ -24,12 +24,20 @@ const Cart  = ({ products, total: subtotal, onCheckoutClicked, addToCart }) => {
     }
   };
 
+  const handleSubtractOneFromCartClicked = id => {
+    if (isFunction(subtractOneFromCart)) {
+      subtractOneFromCart(id);
+    }
+  };
+
   const renderProduct = (product, i) => {
     const hasInventory = product.inventory > 0;
+    const canSubtract = product.quantity > 0;
 
     return (
         <div className={styles.productWrapper} key={i}>
           <CartProduct
+              id={product.id}
               title={product.title}
               price={product.price}
               quantity={product.quantity}
@@ -38,7 +46,9 @@ const Cart  = ({ products, total: subtotal, onCheckoutClicked, addToCart }) => {
 
           <div className={styles.buttonBar}>
             <button
-                className={`${styles.halfLeft}`}
+                className={`${styles.halfLeft} ${!canSubtract ? styles.disabled : ""}`}
+                onClick={() => handleSubtractOneFromCartClicked(product.id)}
+                disabled={!canSubtract ? "disabled" : ""}
             >
               <Remove />
             </button>
@@ -112,7 +122,8 @@ Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
   addToCart: PropTypes.func.isRequired,
-  onCheckoutClicked: PropTypes.func
+  onCheckoutClicked: PropTypes.func,
+  subtractOneFromCart: PropTypes.func.isRequired
 };
 
-export default connect(null, { addToCart })(Cart);
+export default connect(null, { addToCart, subtractOneFromCart })(Cart);

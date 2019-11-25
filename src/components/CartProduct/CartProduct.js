@@ -1,13 +1,17 @@
 import React from 'react'
 import { connect } from "react-redux"
 import PropTypes from 'prop-types'
-import {addToCart} from 'actions';
+import {addToCart, removeFromCart} from 'actions';
 
 import styles from "./styles.module.css";
 
 
-const CartProduct = ({ id, price, title, quantity }) => {
+const CartProduct = ({ id, price, title, removeFromCart }) => {
   const imageSrc = require(`globals/assets/product-images/${title.toLowerCase()}.png`);
+
+  const handleRemoveClicked = () => {
+    removeFromCart(id);
+  };
 
   return (
       <div className={styles.product}>
@@ -19,7 +23,7 @@ const CartProduct = ({ id, price, title, quantity }) => {
             <div className={styles.price} tabIndex={0}>${price}</div>
           </div>
 
-          <button className={styles.removeButton}>Remove</button>
+          <button className={styles.removeButton} onClick={handleRemoveClicked}>Remove</button>
         </div>
       </div>
   );
@@ -29,7 +33,11 @@ CartProduct.propTypes = {
   price: PropTypes.number,
   inventory: PropTypes.number,
   title: PropTypes.string,
-  addToCart: PropTypes.func.isRequired
+  addToCart: PropTypes.func.isRequired,
+  removeFromCart: PropTypes.func.isRequired
 };
 
-export default connect(null, { addToCart })(CartProduct)
+export default connect(null, {
+  addToCart,
+  removeFromCart
+})(CartProduct)
