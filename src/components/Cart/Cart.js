@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import {addToCart, subtractOneFromCart} from 'actions';
 import {formatCurrency, isFunction} from 'helpers';
 import CartProduct from 'components/CartProduct/CartProduct';
-import Cta from "components/Cta/Cta"
 
 import Add from "globals/assets/icons/add.svg";
 import CartIcon from "globals/assets/icons/cart.svg";
@@ -12,6 +11,7 @@ import Remove from "globals/assets/icons/remove.svg";
 import styles from "./styles.module.css";
 
 const TAX_RATE = 0.08;
+
 
 const Cart  = ({ products, total: subtotal, onCheckoutClicked, addToCart, subtractOneFromCart }) => {
   const hasProducts = products.length > 0;

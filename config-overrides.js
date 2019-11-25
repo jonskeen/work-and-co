@@ -6,11 +6,6 @@ const postcssCustomMedia = require("postcss-custom-media");
 const postcssFlexbugFixes = require("postcss-flexbugs-fixes");
 const postcssPresetEnv = require("postcss-preset-env");
 
-const printObject = obj => console.log(util.inspect(obj, {
-  showHidden: false,
-  depth: null
-}));
-
 module.exports = function override(config, env) {
   if (!config.plugins) {
     config.plugins = [];
