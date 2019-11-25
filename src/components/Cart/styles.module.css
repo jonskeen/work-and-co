@@ -53,7 +53,7 @@
         vertical-align: middle;
     }
 
-    &:hover {
+    &:not(.disabled):hover {
         background-color: var(--color-primary-hover);
     }
 
@@ -106,4 +106,8 @@
 
 .checkout button {
     padding: 14px 0;
+}
+
+button.disabled {
+    opacity: var(--disabled-opacity);
 }

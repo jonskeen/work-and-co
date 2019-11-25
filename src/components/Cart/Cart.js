@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from "react-redux";
 import PropTypes from 'prop-types';
-import { formatCurrency } from "helpers";
+import {addToCart} from 'actions';
+import {formatCurrency, isFunction} from 'helpers';
 import CartProduct from 'components/CartProduct/CartProduct';
 import Cta from "components/Cta/Cta"
 
@@ -11,12 +13,20 @@ import styles from "./styles.module.css";
 
 const TAX_RATE = 0.08;
 
-const Cart  = ({ products, total: subtotal, onCheckoutClicked }) => {
+const Cart  = ({ products, total: subtotal, onCheckoutClicked, addToCart }) => {
   const hasProducts = products.length > 0;
   const taxAmount = parseFloat(subtotal) * TAX_RATE;
   const total = parseFloat(subtotal) + taxAmount;
 
+  const handleAddToCartClicked = id => {
+    if (isFunction(addToCart)) {
+      addToCart(id);
+    }
+  };
+
   const renderProduct = (product, i) => {
+    const hasInventory = product.inventory > 0;
+
     return (
         <div className={styles.productWrapper} key={i}>
           <CartProduct
@@ -27,9 +37,19 @@ const Cart  = ({ products, total: subtotal, onCheckoutClicked }) => {
           />
 
           <div className={styles.buttonBar}>
-            <button className={styles.halfLeft}><Add /></button>
+            <button
+                className={`${styles.halfLeft}`}
+            >
+              <Remove />
+            </button>
             <div className={styles.quantity}><span>{product.quantity}</span></div>
-            <button className={styles.halfRight}><Remove /></button>
+            <button
+                className={`${styles.halfRight} ${!hasInventory ? styles.disabled : ""}`}
+                onClick={() => handleAddToCartClicked(product.id)}
+                disabled={!hasInventory ? "disabled" : ""}
+            >
+              <Add />
+            </button>
           </div>
 
           <hr />
@@ -91,7 +111,8 @@ const Cart  = ({ products, total: subtotal, onCheckoutClicked }) => {
 Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
+  addToCart: PropTypes.func.isRequired,
   onCheckoutClicked: PropTypes.func
 };
 
-export default Cart;
+export default connect(null, { addToCart })(Cart);
