@@ -1,5 +1,6 @@
 .cta {
     background-color: var(--color-primary);
+    border: none;
     color: var(--color-white);
     padding: 8px 17px;
     text-transform: uppercase;
