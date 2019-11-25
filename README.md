@@ -11,7 +11,7 @@ I used a plugin called "react-app-rewired" to make changes to the Webpack config
 
 [See the config-overrides here](./config-overrides.js).
 
-###CSS Variables
+### CSS Variables
 As mentioned above, I made use of CSS variables in this codebase. Even on something small like this I find they provide a lot of value. For starters, once I get the variable set, I can stop referencing Sketch for the same values like hex codes or border radii.
 
 That said, I really only used them for colors and font-families here. Normally I would scour the specs to identify the common spacings (i.e., margin and padding), font-sizes, letter-spacing, etc. and work with Design to come up with a style guide to ensure consistency across all modules in the project. The setup can be tedious, but the result is a very tight set of variables that can make sweeping changes when global updates are needed. It also makes theming possible, which can be useful for a platform that will be reskinned on an individual client basis.
