@@ -1,42 +1,9 @@
 # Work & Co Web Code Assessment
 
-This is a copy of the [Redux Shopping Cart Example](https://github.com/reactjs/redux/tree/master/examples/shopping-cart).
+##Hello, Work & Co!
+Thank you for the opportunity to demonstrate some of my coding capabilities and for a fun project to tinker on. I hope you find my work clean, concise, and readable, but I always value feedback and constructive criticism. I added a few notes on the work and my approach, but if anyting is unclear I am happy to chat in any setting you find convenient.
 
-To install dependencies, use the package manager [Yarn](https://yarnpkg.com/en/):
-
-```
-yarn
-```
-
-To start a development server:
-
-```
-yarn start
-```
-
-## Setup
-
-Please create a new, public Github repository where your assessment can be reviewed. We recommend the following steps:
-
-- Create a repository on your personal Github. Make sure the `Initialize this repository with a README` box is unchecked.
-- Visit your new repository. Copy the `…or push an existing repository from the command line` code provided and run it in your terminal in the same directory as this README file. It will look something like this:
-
-```
-git remote add origin git@github.com:my-username/my-assessment.git
-git push -u origin master
-```
-
-Note: You're encouraged to show your work by including multiple commits - we'll be looking through your git history.
-
-## Tasks
-
-1. [Implement Responsive Design](/tasks/01-responsive-design.md)
-2. [Enhance Cart Functionality](/tasks/02-cart-enhancements.md)
-3. [Hook Up Product API](/tasks/03-product-api.md)
-
-You're welcome (but not required) to add any libraries you think would be helpful.
-
-Please also update this README file: we'd love to see notes on your decision-making process, links to the most exciting pieces of code, or anything else that will give us additional context when reviewing your assessment.
+Thanks again for your consideration and I look forward to the next steps as we get to know one another. 
 
 ## Notes on My Work
 ###Webpack and react-app-rewired
@@ -75,3 +42,43 @@ I made my lowest breakpoint wider than the specs in order to keep the mobile vie
 I developed in Chrome, but I did check out the app in Safari and FireFox on OSX and Safari and Chrome on iOS. I did not test IE or Edge because I don't think I can bring myself to do that voluntarily. I am familiar with writing (or installing!) polyfills to ensure my work is supported there as well and I am much less laissez faire about it in real settings.
 
 I used the super helpful [ngrok](https://ngrok.com/) to test on my mobile because I have learned not to trust Chrome's emulation alone.
+
+## Actual README Stuff
+
+This is a copy of the [Redux Shopping Cart Example](https://github.com/reactjs/redux/tree/master/examples/shopping-cart).
+
+To install dependencies, use the package manager [Yarn](https://yarnpkg.com/en/):
+
+```
+yarn
+```
+
+To start a development server:
+
+```
+yarn start
+```
+
+## Setup
+
+Please create a new, public Github repository where your assessment can be reviewed. We recommend the following steps:
+
+- Create a repository on your personal Github. Make sure the `Initialize this repository with a README` box is unchecked.
+- Visit your new repository. Copy the `…or push an existing repository from the command line` code provided and run it in your terminal in the same directory as this README file. It will look something like this:
+
+```
+git remote add origin git@github.com:my-username/my-assessment.git
+git push -u origin master
+```
+
+Note: You're encouraged to show your work by including multiple commits - we'll be looking through your git history.
+
+## Tasks
+
+1. [Implement Responsive Design](/tasks/01-responsive-design.md)
+2. [Enhance Cart Functionality](/tasks/02-cart-enhancements.md)
+3. [Hook Up Product API](/tasks/03-product-api.md)
+
+You're welcome (but not required) to add any libraries you think would be helpful.
+
+Please also update this README file: we'd love to see notes on your decision-making process, links to the most exciting pieces of code, or anything else that will give us additional context when reviewing your assessment.
