@@ -42,7 +42,7 @@ class App extends Component {
     return (
         <div className={styles.app}>
           <div className={styles.headline}>
-            <h1>Acme Store</h1>
+            <h1 className={styles.header}><a href="/">Acme Store</a></h1>
             <button
                 className={`${styles.cartWrapper} ${styles.unbutton}`}
                 onClick={() => this.setIsCartOpen(!isCartOpen)}

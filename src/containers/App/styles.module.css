@@ -17,6 +17,11 @@
     }
 }
 
+.header > a {
+    color: var(--color-black);
+    text-decoration: none;
+}
+
 .headline {
     align-items: flex-start;
     display: flex;
