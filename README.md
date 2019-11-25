@@ -70,3 +70,8 @@ My work should be responsive, however I use static values for padding and margin
 I made my lowest breakpoint wider than the specs in order to keep the mobile view on wider phone screens like the iPhone 6/7/8 Plus.
 
 [Custom Media Query Definitions](./src/globals/css/media-queries.css)
+
+###Browser Compatibility
+I developed in Chrome, but I did check out the app in Safari and FireFox on OSX and Safari and Chrome on iOS. I did not test IE or Edge because I don't think I can bring myself to do that voluntarily. I am familiar with writing (or installing!) polyfills to ensure my work is supported there as well and I am much less laissez faire about it in real settings.
+
+I used the super helpful [ngrok](https://ngrok.com/) to test on my mobile because I have learned not to trust Chrome's emulation alone.
