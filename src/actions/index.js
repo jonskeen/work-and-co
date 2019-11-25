@@ -34,9 +34,7 @@ export const removeFromCart = productId => (dispatch, getState) => {
   const state = getState();
   const quantity = getQuantity(state.cart, productId);
 
-  if (quantity > 0) {
-    dispatch(removeFromCartUnsafe(productId, quantity));
-  }
+  dispatch(removeFromCartUnsafe(productId, quantity));
 };
 
 const subtractOneFromCartUnsafe = (productId) => ({
@@ -54,7 +52,7 @@ export const subtractOneFromCart = productId => (dispatch, getState) => {
 };
 
 export const checkout = products => (dispatch, getState) => {
-  const { cart } = getState();
+  const { cart  } = getState();
 
   dispatch({
     type: types.CHECKOUT_REQUEST,

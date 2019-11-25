@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { removeFromCart } from "actions";
+import { isFunction } from "helpers";
 import ProductsContainer from 'containers/Products/Products';
 import CartContainer from 'containers/Cart/Cart';
 import CartIcon from 'globals/assets/icons/cart.svg'
@@ -13,6 +15,18 @@ class App extends Component {
   };
 
   setIsCartOpen = bool => {
+    const { itemQuantities, removeFromCart } = this.props;
+    const removeAfterModalCloses = id => setTimeout(() => removeFromCart(id), 250);
+
+    if (bool === false && isFunction(removeFromCart)) {
+      Object.keys(itemQuantities).forEach(id => {
+        const intId = parseInt(id, 10);
+        if (itemQuantities[id] <= 0) {
+          removeAfterModalCloses(intId);
+        }
+      });
+    }
+
     this.setState({isCartOpen: bool})
   };
 
@@ -69,4 +83,4 @@ const mapStateToProps = state => ({
   itemQuantities: state.cart.quantityById
 });
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { removeFromCart })(App);
