@@ -39,9 +39,13 @@
     height: 40px;
     margin: 20px 0;
 
-    & > * {
-        width: 33.33%;
+    @media (--large) {
+        width: 40%;
     }
+}
+
+.buttonBar > * {
+    width: 33.33%;
 }
 
 .halfLeft,

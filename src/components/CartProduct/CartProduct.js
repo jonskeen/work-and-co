@@ -15,7 +15,9 @@ const CartProduct = ({ id, price, title, removeFromCart }) => {
 
   return (
       <div className={styles.product}>
-        <div className={styles.image} style={{ backgroundImage: `url(${imageSrc})`}} />
+        <div className={styles.image} style={{ backgroundImage: `url(${imageSrc})`}}>
+          <div style={{ paddingBottom: "56%" }} />
+        </div>
 
         <div className={styles.body}>
           <div className={styles.titlePriceWrapper}>

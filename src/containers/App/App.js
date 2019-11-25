@@ -72,7 +72,7 @@ class App extends Component {
           </div>
           <hr className={styles.hRule}/>
           <ProductsContainer/>
-          <hr/>
+
           <CartContainer isOpen={isCartOpen} onClose={() => this.setIsCartOpen(false)}/>
         </div>
     )

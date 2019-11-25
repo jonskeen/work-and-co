@@ -13,8 +13,7 @@
     padding-bottom: 12px;
 
     @media (--medium) {
-        flex-direction: row;
-        padding-bottom: 9px;
+        margin-bottom: 40px;
     }
 }
 
@@ -38,13 +37,8 @@
         flex-grow: 1;
         flex-shrink: 0;
         max-width: 60%;
-        padding: 35px 45px 30px 40px;
+        padding: 0 45px 0 40px;
     }
-
-    @media (--large) {
-        padding: 45px 75px 40px 53px;
-    }
-
 }
 
 .title {
@@ -52,13 +46,9 @@
     font-weight: normal;
     margin-bottom: 3px;
 
-    @media (--medium) {
+    @media (--large) {
         font-size: 28px;
         margin-right: 20px;
-    }
-
-    @media (--large) {
-        font-size: 38px;
     }
 }
 
@@ -66,7 +56,7 @@
     font-size: 14px;
     font-weight: lighter;
 
-    @media (--medium) {
+    @media (--large) {
         font-size: 21px;
     }
 }
@@ -105,4 +95,12 @@
     padding: 0;
     align-self: flex-start;
     justify-self: flex-end;
+
+    @media (--medium) {
+        font-size: 16px;
+    }
+
+    @media (--large) {
+        font-size: 18px;
+    }
 }
